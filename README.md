@@ -2,9 +2,9 @@
 "Retheming" assignment done as part of Arcada's [Game Design and Production](https://www.arcada.fi/en/study-arcada/continuing-education/course-calendar/game-design-and-production) course.  
 Using the [Game Maker'](https://gamemaker.io/) [Jump Fire](https://gamemaker.io/en/tutorials/fire-jump-dnd) template, apply the new theme of "Death is not the end".  
 ## Credits:
-Design and coding: Dmitry Kustov
-New graphical assets: Nguyen Tien
-New sound assets: Jade Allen
+- Game design and coding: Dmitry Kustov
+- New graphical assets: Nguyen Tien
+- New sound assets: Jade Allen
 ## Changes already done:
 1. Can press any key on starting screen, not just tap
 2. Navigate menus using `up` and `down` keys (select with `space` or `enter` keys)
