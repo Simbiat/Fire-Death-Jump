@@ -3,7 +3,7 @@
 Using the [Game Maker'](https://gamemaker.io/) [Jump Fire](https://gamemaker.io/en/tutorials/fire-jump-dnd) template, apply the new theme of "Death is not the end".  
 ## Credits:
 Design and coding: Dmitry Kustov
-New graphical assets: Ngyen Tien
+New graphical assets: Nguyen Tien
 New sound assets: Jade Allen
 ## Changes already done:
 1. Can press any key on starting screen, not just tap
