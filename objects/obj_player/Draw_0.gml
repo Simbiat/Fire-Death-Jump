@@ -1,15 +1,5 @@
 // Draw the player itself
-if ghost {
-	shader_set(sha_tone);
-	//Apply regular blacn&white filter
-	shader_set_uniform_f_array(shader_get_uniform(sha_tone, "u_lum"), [0.299, 0.587, 0.114, 1.0]);
-	//Apply optional tone
-	shader_set_uniform_f_array(shader_get_uniform(sha_tone, "u_tone"), [1.0, 1.0, 1.0, 1.0]);
-	draw_self();
-	shader_reset();
-} else {
-	draw_self();
-}
+grayscale();
 
 // If the player is wrapping, then we need
 // to draw the sprite on the other side of

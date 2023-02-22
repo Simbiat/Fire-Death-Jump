@@ -8,8 +8,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Gauges",
+    "path": "folders/Objects/UI/Gauges.yy",
   },
   "parentObjectId": null,
   "persistent": false,

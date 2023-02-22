@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Internal_GML",
-    "path": "folders/Objects/New/Internal_GML.yy",
+    "name": "Helpers",
+    "path": "folders/Objects/Helpers.yy",
   },
   "parentObjectId": null,
   "persistent": false,

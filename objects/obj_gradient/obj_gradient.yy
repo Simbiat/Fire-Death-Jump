@@ -8,8 +8,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Extra_Visuals",
-    "path": "folders/Objects/New/Extra_Visuals.yy",
+    "name": "Building",
+    "path": "folders/Objects/Building.yy",
   },
   "parentObjectId": null,
   "persistent": false,

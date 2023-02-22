@@ -2,10 +2,11 @@
 vspeed = -35;
 gravity = 0.8;
 
-// Initialize the player's rescue and height scores as global variables
-global.score_rescue = 0;
+// Initialize the player's blood and height scores as global variables
+global.score_blood = 0;
 global.score_height = 0;
-global.score_total = 0;
+global.ghost_timer = 0;
+global.ghost_satiety = 0;
 
 // Horizontal movement speed
 // Used by events for Left, Right, A & D keys

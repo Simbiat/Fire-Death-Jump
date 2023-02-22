@@ -17,3 +17,4 @@ else
 {
 	draw_self();
 }
+grayscale();

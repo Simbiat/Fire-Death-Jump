@@ -1,3 +1,8 @@
+//Change the ghost status, if sated
+if ghost && global.ghost_satiety == 100 {
+	ghost = false;	
+}
+
 // This event handles moving everything down so it looks like the player is moving up.
 // Please refer to Part 1 of the tutorial for detailed information.
 // If the player is in the upper half of the room
@@ -25,8 +30,6 @@ if (y < room_height / 2)
 	
 		// Add to the height score
 		global.score_height += downspeed / 100;
-		//Add to total score
-		global.score_total += downspeed / 100;
 	}
 }
 

@@ -4,12 +4,13 @@
   "name": "obj_tile_variation",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Extra_Visuals",
-    "path": "folders/Objects/New/Extra_Visuals.yy",
+    "name": "Building",
+    "path": "folders/Objects/Building.yy",
   },
   "parentObjectId": {
     "name": "obj_respawn_parent",

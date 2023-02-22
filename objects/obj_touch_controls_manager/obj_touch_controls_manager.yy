@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "New",
-    "path": "folders/Objects/New.yy",
+    "name": "Helpers",
+    "path": "folders/Objects/Helpers.yy",
   },
   "parentObjectId": null,
   "persistent": false,

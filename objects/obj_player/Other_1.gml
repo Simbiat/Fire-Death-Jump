@@ -12,6 +12,7 @@ if (y >= room_height)
 	// Disable gravity so the player stays stopped
 	gravity = 0;
 	if !ghost {
+		global.ghost_satiety = 10;
 		ghost = true;
 	}
 	/*Old code
