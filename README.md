@@ -14,3 +14,4 @@ Using the [Game Maker'](https://gamemaker.io/) [Jump Fire](https://gamemaker.io/
 6. Removed instant death (switches to `ghost` mode instead with timer and satiety mechanic)
 7. Removed `foam` mechanic
 8. Has a chance of generating a secondary window if ther eis enough space in a row
+9. Allow to hold jump by holding `down`, or left mouse button (tap)

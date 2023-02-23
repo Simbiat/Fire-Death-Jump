@@ -6,7 +6,7 @@ draw_self();
 
 draw_set_font(fnt_score);
 
-draw_set_halign(fa_center);
+draw_set_halign(fa_left);
 draw_set_valign(fa_middle);
 
 // round() is used because
@@ -15,7 +15,7 @@ draw_set_valign(fa_middle);
 // need to display an integer,
 // which is why we round it
 if instance_exists(obj_player) && obj_player.ghost {
-	draw_text(x, y, "Satiety " + string(round(global.ghost_satiety)) + "/100");
+	text_outline(x + 50, y, string(round(global.ghost_satiety)) + "/100", make_colour_rgb(136, 8, 8));
 } else {
 	draw_text(x, y, "");
 }

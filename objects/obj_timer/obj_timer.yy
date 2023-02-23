@@ -30,8 +30,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_score_card",
-    "path": "sprites/spr_score_card/spr_score_card.yy",
+    "name": "spr_rooster",
+    "path": "sprites/spr_rooster/spr_rooster.yy",
   },
   "spriteMaskId": null,
   "visible": true,

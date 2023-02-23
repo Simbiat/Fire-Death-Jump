@@ -5,7 +5,16 @@ if (killed == false && eaten == false) {
 			if hp > 0 {
 				if alarm[2] < 0 {
 					hp -= 1;
-					alarm[2] = 0.75*room_speed;
+					//Add a little bit of blood if we are not holding down
+					if !isHoldingDown() {
+						global.score_blood += random_range(0.2, 0.5);
+					}
+					if hp == 0 {
+						//Synchronize with the "death" alarm
+						alarm[2] = 4;
+					} else {
+						alarm[2] = 0.75*room_speed;
+					}
 				}
 			} else {
 				// Play kill sound

@@ -33,9 +33,7 @@ touch_input_x = 0;
 function toGhost(fire = true)
 {
 	if !ghost {
-		global.ghost_satiety = 10;
-		global.ghost_timer = 150 - deaths * 30;
-		if global.ghost_timer <= 0 {
+		if deaths > 5 {
 			//Perma death
 			instance_create_layer(x, y, "Player", obj_player_defeated);
 			audio_play_sound(snd_player_defeat_fire, 0, 0);
@@ -43,6 +41,8 @@ function toGhost(fire = true)
 		} else {
 			deaths += 1;
 			ghost = true;
+			global.ghost_satiety = 10;
+			global.ghost_timer = 150 - deaths * 30;
 			// Play sound for when fire defeats the player
 			if fire {
 				audio_play_sound(snd_player_defeat_fire, 0, 0);
