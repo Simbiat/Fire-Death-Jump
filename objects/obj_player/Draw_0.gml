@@ -1,6 +1,3 @@
-// Draw the player itself
-grayscale();
-
 // If the player is wrapping, then we need
 // to draw the sprite on the other side of
 // the screen so we can see the player on
@@ -30,3 +27,5 @@ if (wrapping)
 		}
 	}
 }
+// Draw the player itself
+grayscale();

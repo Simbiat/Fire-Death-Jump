@@ -9,11 +9,4 @@ if (other.image_alpha < 1)
 // Let the fire defeat the player
 // Create defeated instance
 // and remove current instance
-if !ghost {
-	//instance_create_layer(x, y, "Player", obj_player_defeated);
-	//instance_destroy();
-	global.ghost_satiety = 10;
-	ghost = true;
-	// Play sound for when fire defeats the player
-	audio_play_sound(snd_player_defeat_fire, 0, 0);
-}
+toGhost();

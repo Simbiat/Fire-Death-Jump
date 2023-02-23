@@ -24,12 +24,6 @@ if instance_exists(obj_player) {
 	depth = obj_player.depth - 10;
 }
 
-// Create gold particles
-repeat (irandom_range(5, 7))
-{
-	instance_create_layer(x, y - 100, "Foam", obj_gold_particle);
-}
-
 // Play fall sound (player's fall sound but with a lower pitch)
 snd = audio_play_sound(snd_player_fall, 0, 0);
 

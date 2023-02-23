@@ -40,6 +40,13 @@
   "physicsStartAwake": true,
   "properties": [
     {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"ghost","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"False","varType":3,},
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"deaths","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"0","varType":1,},
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"sprite_air","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"spr_player_1_air","varType":5,},
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"sprite_defeated","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"spr_player_1_defeated","varType":5,},
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"sprite_fall","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"spr_player_1_fall","varType":5,},
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"sprite_jump","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"spr_player_1_jump","varType":5,},
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"sprite_air_to_fall","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"spr_player_1_air_to_fall","varType":5,},
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"sprite_jump_to_air","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"spr_player_1_jump_to_air","varType":5,},
   ],
   "solid": false,
   "spriteId": {

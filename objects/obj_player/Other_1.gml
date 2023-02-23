@@ -11,10 +11,7 @@ if (y >= room_height)
 	vspeed = 0;
 	// Disable gravity so the player stays stopped
 	gravity = 0;
-	if !ghost {
-		global.ghost_satiety = 10;
-		ghost = true;
-	}
+	toGhost(false);
 	/*Old code
 		// Create defeated instance
 		var defeated = instance_create_layer(x, y, "Player", obj_player_defeated);

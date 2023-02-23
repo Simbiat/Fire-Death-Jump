@@ -9,8 +9,8 @@ Using the [Game Maker'](https://gamemaker.io/) [Jump Fire](https://gamemaker.io/
 1. Removed start screen
 2. Navigate menus using `up` and `down` keys (select with `space` or `enter` keys)
 3. Use `escape` key to end ongoing game, return to menu, or quit (depending on what's currently on screen)
-4. Use `shift` key to switch characters in the main menu
+4. Removed character selection
 5. Adjusted UI on the main game and game over screens
-6. `Ghost` variable on `obj_player` as a placeholder for future changes in mechanic
-7. Removed instant death (switches to `ghost` mode instead)
-8. Basis for satiety mechanic
+6. Removed instant death (switches to `ghost` mode instead with timer and satiety mechanic)
+7. Removed `foam` mechanic
+8. Has a chance of generating a secondary window if ther eis enough space in a row

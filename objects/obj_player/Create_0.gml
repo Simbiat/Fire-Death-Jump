@@ -24,29 +24,31 @@ wrapping = false;
 // How much margin the player has (horizontally, from the center) to wrap on the sides of the screen
 wrap_margin = 70;
 
-// Initialize sprites when using the first character [0]
-if (global.char == 0)
-{
-	sprite_air = spr_player_1_air;
-	sprite_defeated = spr_player_1_defeated;
-	sprite_fall = spr_player_1_fall;
-	sprite_jump = spr_player_1_jump;
-	sprite_air_to_fall = spr_player_1_air_to_fall;
-	sprite_jump_to_air = spr_player_1_jump_to_air;
-}
-// Initialize sprites when using the second character [1]
-else if (global.char == 1)
-{
-	sprite_air = spr_player_2_air;
-	sprite_defeated = spr_player_2_defeated;
-	sprite_fall = spr_player_2_fall;
-	sprite_jump = spr_player_2_jump;
-	sprite_air_to_fall = spr_player_2_air_to_fall;
-	sprite_jump_to_air = spr_player_2_jump_to_air;
-}
-
-// Start with the "in-air" sprite of the selected character
+// Start with the "in-air" sprite
 sprite_index = sprite_air;
 
 // Touch input for the X axis (relative variable, default 0)
 touch_input_x = 0;
+
+function toGhost(fire = true)
+{
+	if !ghost {
+		global.ghost_satiety = 10;
+		global.ghost_timer = 150 - deaths * 30;
+		if global.ghost_timer <= 0 {
+			//Perma death
+			instance_create_layer(x, y, "Player", obj_player_defeated);
+			audio_play_sound(snd_player_defeat_fire, 0, 0);
+			instance_destroy();
+		} else {
+			deaths += 1;
+			ghost = true;
+			// Play sound for when fire defeats the player
+			if fire {
+				audio_play_sound(snd_player_defeat_fire, 0, 0);
+			} else {
+				audio_play_sound(snd_player_defeat_bottom, 0, 0);
+			}
+		}
+	}
+}

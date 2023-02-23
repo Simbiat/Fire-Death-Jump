@@ -48,8 +48,8 @@
   },
   "origin": 9,
   "parent": {
-    "name": "Char_1",
-    "path": "folders/Sprites/Player/Char_1.yy",
+    "name": "Player",
+    "path": "folders/Sprites/Player.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

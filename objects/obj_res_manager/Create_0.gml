@@ -25,7 +25,3 @@ randomize();
 // Initialize global highscore variables
 global.highscore_blood = 0;
 global.highscore_height = 0;
-
-// This is the ID of the character that is
-// selected (0 or 1)
-global.char = 0;
