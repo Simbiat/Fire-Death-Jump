@@ -1,9 +1,10 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_satiety",
+  "name": "obj_blood_line",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -28,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_fangs",
-    "path": "sprites/spr_fangs/spr_fangs.yy",
+    "name": "spr_blood_line",
+    "path": "sprites/spr_blood_line/spr_blood_line.yy",
   },
   "spriteMaskId": null,
   "visible": true,

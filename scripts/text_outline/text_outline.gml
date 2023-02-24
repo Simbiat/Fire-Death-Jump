@@ -1,4 +1,4 @@
-function text_outline(xx, yy, textToDraw, textColor = c_white, outlineColor = c_black, outlineThickness = 2)
+function text_outline(xx, yy, textToDraw, textColor = c_white, outlineColor = c_black, outlineThickness = 4)
 {
 	// Draw the text with an outline
 	draw_set_color(outlineColor);

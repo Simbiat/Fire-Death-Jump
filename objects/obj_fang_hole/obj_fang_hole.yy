@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_satiety",
+  "name": "obj_fang_hole",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
   ],
@@ -28,8 +28,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_fangs",
-    "path": "sprites/spr_fangs/spr_fangs.yy",
+    "name": "spr_fang_hole",
+    "path": "sprites/spr_fang_hole/spr_fang_hole.yy",
   },
   "spriteMaskId": null,
   "visible": true,

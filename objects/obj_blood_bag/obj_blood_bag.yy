@@ -1,8 +1,9 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_satiety",
+  "name": "obj_blood_bag",
   "eventList": [
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
   ],
   "managed": true,
@@ -28,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_fangs",
-    "path": "sprites/spr_fangs/spr_fangs.yy",
+    "name": "spr_blood_bag",
+    "path": "sprites/spr_blood_bag/spr_blood_bag.yy",
   },
   "spriteMaskId": null,
   "visible": true,
