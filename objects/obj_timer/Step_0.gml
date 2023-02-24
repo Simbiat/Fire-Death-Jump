@@ -5,8 +5,7 @@ if instance_exists(obj_player) && obj_player.ghost {
 			alarm[0] = room_speed;
 		}
 	} else {
-		instance_create_layer(obj_player.x, obj_player.y, "Player", obj_player_defeated);
-		instance_destroy(obj_player);
+		permaDeath();
 	}
 } else {
 	image_alpha = 0;

@@ -1,4 +1,4 @@
-# Fire Death Jump
+# Jiangshi, the Jumping Vampire
 "Retheming" assignment done as part of Arcada's [Game Design and Production](https://www.arcada.fi/en/study-arcada/continuing-education/course-calendar/game-design-and-production) course.  
 Using the [Game Maker'](https://gamemaker.io/) [Jump Fire](https://gamemaker.io/en/tutorials/fire-jump-dnd) template, apply the new theme of "Death is not the end".  
 ## Credits:
@@ -15,3 +15,4 @@ Using the [Game Maker'](https://gamemaker.io/) [Jump Fire](https://gamemaker.io/
 7. Removed `foam` mechanic
 8. Has a chance of generating a secondary window if ther eis enough space in a row
 9. Allow to hold jump by holding `down`, or left mouse button (tap)
+10. Screenshake

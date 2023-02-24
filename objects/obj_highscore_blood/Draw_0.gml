@@ -15,7 +15,7 @@ draw_set_valign(fa_middle);
 // Draw blood highscore
 // string() is used to convert the highscore from a number
 // into a text string
-text_outline(x, y, "Goriest:" + string(global.highscore_blood)+"l", make_colour_rgb(150, 8, 8));
+text_outline(x, y, "Goriest: " + string(global.highscore_blood)+"l", make_colour_rgb(150, 8, 8));
 
 // Reset alignment
 draw_set_halign(fa_left);

@@ -4,9 +4,6 @@
 // and fall.
 audio_stop_sound(snd_game_music);
 
-// Take the player's defeated sprite and use it
-sprite_index = obj_player.sprite_defeated;
-
 // Jump up and enable gravity
 vspeed = -25;
 gravity = 1;

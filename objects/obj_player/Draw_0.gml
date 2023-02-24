@@ -2,6 +2,7 @@
 // to draw the sprite on the other side of
 // the screen so we can see the player on
 // both sides
+/*
 if (wrapping)
 {
 	// If the player is currently on
@@ -27,5 +28,6 @@ if (wrapping)
 		}
 	}
 }
+*/
 // Draw the player itself
 grayscale();
