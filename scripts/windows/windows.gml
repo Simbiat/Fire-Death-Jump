@@ -21,7 +21,7 @@ function fillingWindow()
 	chance = 3;
 	if !secondary {
 		if instance_exists(obj_player) && obj_player.ghost {
-			if random_range(0, 100) <= 40 + (obj_player.deaths - 1)*5 {
+			if random_range(0, 100) <= 40 + obj_player.deaths*5 {
 				chance = 0;
 			} else {
 				chance = irandom_range(1, 3);
@@ -29,7 +29,7 @@ function fillingWindow()
 		} else {
 			//Calculate fire chance based on height, to increase the challenge for every 1000 meters
 			//Cap it at 80 percent, otherwise the end can be too difficult and there will be less blood
-			var fireChance = min(25 + 5*(global.score_height/1000), 80);
+			var fireChance = min(20 + 5*(global.score_height/1000), 80);
 			if random_range(0, 100) <= fireChance {
 				chance = 1;
 			} else {

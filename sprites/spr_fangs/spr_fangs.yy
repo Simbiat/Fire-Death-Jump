@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Icons",
-    "path": "folders/Sprites/Icons.yy",
+    "name": "Satiety",
+    "path": "folders/Sprites/UI/Satiety.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

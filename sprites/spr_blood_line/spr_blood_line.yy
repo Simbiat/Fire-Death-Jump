@@ -48,8 +48,8 @@
   },
   "origin": 7,
   "parent": {
-    "name": "UI",
-    "path": "folders/Sprites/UI.yy",
+    "name": "Satiety",
+    "path": "folders/Sprites/UI/Satiety.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
