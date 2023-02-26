@@ -5,10 +5,7 @@ if instance_exists(obj_player) && obj_player.ghost {
 	image_yscale = 0.75*global.ghost_satiety;
 	if global.ghost_timer >= 0 {
 		if global.ghost_satiety == 100 {
-			obj_player.ghost = false;
-			global.ghost_satiety = 0;
-			layer_sequence_destroy(obj_game.ghost_seq);
-			obj_game.ghost_seq = noone;
+			fromGhost();
 		} else {
 			if global.ghost_satiety > 0 && alarm[0] < 0 {
 				alarm[0] = room_speed;

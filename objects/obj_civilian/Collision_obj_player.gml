@@ -1,5 +1,5 @@
 // If civilian is not killed yet
-if (killed == false && eaten == false) {	
+if (killed == false && eaten == false) {
 	if obj_player.ghost {
 		if obj_player.vspeed == 0 {
 			if hp > 0 {
