@@ -1,5 +1,5 @@
 # Jiāngshī, the Jumping Vampire
-"Retheming" assignment done as part of Arcada's [Game Design and Production](https://www.arcada.fi/en/study-arcada/continuing-education/course-calendar/game-design-and-production) course.  
+"Retheming" game jam done as part of Arcada's [Game Design and Production](https://www.arcada.fi/en/study-arcada/continuing-education/course-calendar/game-design-and-production) course.  
 Using the [Game Maker'](https://gamemaker.io/) [Jump Fire](https://gamemaker.io/en/tutorials/fire-jump-dnd) template, apply the new theme of "Death is not the end".  
 ## Deathless Dash:
 - Game design and coding: [Dmitry Kustov](https://www.linkedin.com/in/simbiat19/)

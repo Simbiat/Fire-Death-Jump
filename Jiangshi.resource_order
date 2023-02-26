@@ -26,9 +26,9 @@
     {"name":"Player","order":5,"path":"folders/Sprites/Player.yy",},
     {"name":"UI","order":9,"path":"folders/Sprites/UI.yy",},
     {"name":"Satiety","order":13,"path":"folders/Sprites/UI/Satiety.yy",},
+    {"name":"Timer","order":14,"path":"folders/Sprites/UI/Timer.yy",},
     {"name":"Tile Sets","order":15,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":18,"path":"folders/Timelines.yy",},
-    {"name":"Timer","order":14,"path":"folders/Sprites/UI/Timer.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"obj_score_height","order":4,"path":"objects/obj_score_height/obj_score_height.yy",},
