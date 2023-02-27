@@ -53,6 +53,7 @@
     {"name":"screenshake","order":6,"path":"scripts/screenshake/screenshake.yy",},
     {"name":"snd_player_jump_3","order":5,"path":"sounds/snd_player_jump_3/snd_player_jump_3.yy",},
     {"name":"spr_highscore_card","order":5,"path":"sprites/spr_highscore_card/spr_highscore_card.yy",},
+    {"name":"spr_player_hold_jump","order":7,"path":"sprites/spr_player_hold_jump/spr_player_hold_jump.yy",},
     {"name":"sha_heat","order":2,"path":"shaders/sha_heat/sha_heat.yy",},
     {"name":"snd_menu_music","order":2,"path":"sounds/snd_menu_music/snd_menu_music.yy",},
     {"name":"snd_highscore","order":4,"path":"sounds/snd_highscore/snd_highscore.yy",},

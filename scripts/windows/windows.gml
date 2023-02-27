@@ -70,7 +70,7 @@ function fillingWindow()
 
 	// Change frame to closed window by default
 	// Either 0 or 1
-	image_index = choose(0, 1);
+	image_index = irandom_range(0, 6);
 
 	// Do something based on the random chance value we got
 	switch (chance)
@@ -81,14 +81,14 @@ function fillingWindow()
 			
 			instance_create_layer(x, y + 10, "Spawns", obj_civilian); // The actual civilian
 		
-			image_index = 2;
+			image_index = irandom_range(7, 9);
 		break;
 	
 		// Create fire and change frame to 3 which is used for fire
 		case 1:
 			my_fire = instance_create_layer(x, y, "Spawns", obj_fire);
 		
-			image_index = 3;
+			image_index = irandom_range(10, 13);
 		break;
 	
 		// If neither of the other cases ran

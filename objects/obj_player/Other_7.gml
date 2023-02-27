@@ -1,6 +1,6 @@
 // If the jump animation ended, make the player
 // jump, and start transition to in-air animation
-if (sprite_index == sprite_jump)
+if (sprite_index == sprite_jump || sprite_index = sprite_hold_jump)
 {
 	if !isHoldingDown() {
 		sprite_index = sprite_jump_to_air;
@@ -22,6 +22,10 @@ if (sprite_index == sprite_jump)
 		// bbox_bottom is the bottom edge of the
 		// instance's mask
 		instance_create_layer(x, bbox_bottom, "Player", obj_jump_effect);
+	} else {
+		if sprite_index != sprite_hold_jump {
+			sprite_index = sprite_hold_jump;
+		}
 	}
 }
 // If the jump to air transition animation

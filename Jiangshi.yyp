@@ -74,6 +74,7 @@
     {"id":{"name":"screenshake","path":"scripts/screenshake/screenshake.yy",},"order":6,},
     {"id":{"name":"snd_player_jump_3","path":"sounds/snd_player_jump_3/snd_player_jump_3.yy",},"order":5,},
     {"id":{"name":"spr_highscore_card","path":"sprites/spr_highscore_card/spr_highscore_card.yy",},"order":5,},
+    {"id":{"name":"spr_player_hold_jump","path":"sprites/spr_player_hold_jump/spr_player_hold_jump.yy",},"order":7,},
     {"id":{"name":"sha_heat","path":"shaders/sha_heat/sha_heat.yy",},"order":2,},
     {"id":{"name":"snd_menu_music","path":"sounds/snd_menu_music/snd_menu_music.yy",},"order":2,},
     {"id":{"name":"snd_highscore","path":"sounds/snd_highscore/snd_highscore.yy",},"order":4,},
