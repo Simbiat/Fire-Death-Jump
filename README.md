@@ -4,7 +4,7 @@ Using the [Game Maker'](https://gamemaker.io/) [Jump Fire](https://gamemaker.io/
 Playable web version [here](https://www.simbiat.dev/games/jiangshi/)
 ## Deathless Dash:
 - Game design and coding: [Dmitry Kustov](https://www.linkedin.com/in/simbiat19/)
-- New graphical assets: Nguyen Tien
+- New graphical assets: [Nguyen Tien](https://www.linkedin.com/in/tnguyenanm/)
 - New sound assets: Jade Allen
 ## Changes already done:
 1. Removed start screen
