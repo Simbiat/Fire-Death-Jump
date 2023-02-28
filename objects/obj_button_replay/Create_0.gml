@@ -8,4 +8,4 @@ event_inherited();
 
 text = "REPLAY";
 
-image_index = 1;
+selected = true;

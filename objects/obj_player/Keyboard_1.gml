@@ -1,2 +1,3 @@
 /// @description Movement
 playerMovement();
+buttonEscape();
