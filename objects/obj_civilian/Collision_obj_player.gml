@@ -46,6 +46,10 @@ if (killed == false && eaten == false) {
 			case spr_civilian_2:
 				sprite_index = spr_civilian_transition_2;
 			break;
+			
+			case spr_civilian_3:
+				sprite_index = spr_civilian_transition_3;
+			break;
 		}
 
 		// Set alarm to end transition and make civilian jump

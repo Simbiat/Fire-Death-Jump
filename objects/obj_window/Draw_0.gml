@@ -18,3 +18,8 @@ else
 	draw_self();
 }
 grayscale();
+
+//Draw hints
+if hint_civilian || hint_fire {
+	windowHints();
+}

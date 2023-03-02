@@ -13,6 +13,10 @@ switch (sprite_index)
 	case spr_civilian_transition_2:
 		sprite_index = spr_civilian_killed_2;
 	break;
+	
+	case spr_civilian_transition_3:
+		sprite_index = spr_civilian_killed_3;
+	break;
 }
 
 // Make it jump and enable gravity

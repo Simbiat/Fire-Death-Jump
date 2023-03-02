@@ -14,7 +14,8 @@ if (y > room_height + 360) {
 		//Check if there is enough space for a secondary window
 		var toRight = bbox_right + 133 + sprite_width <= room_width;
 		var toLeft = bbox_left - 133 - sprite_width >= 0;
-		if toRight || toLeft {
+		//Also do not generate secondary windows if we expect to show hints
+		if !hint_fire && !hint_civilian && (toRight || toLeft) {
 			//Roll the dice
 			if (chance == 1 && random_range(0, 100) <= 35) || (chance != 1 && random_range(0, 100) <= 15) {
 				//Generate secondary window

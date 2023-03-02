@@ -29,7 +29,9 @@ function toGhost(fire = true)
 				obj_player.deaths += 1;
 				obj_player.ghost = true;
 				global.ghost_satiety = 10;
-				global.ghost_timer = 150 - obj_player.deaths * 30;
+				global.ghost_timer = 100 - obj_player.deaths * 10;
+				global.first_civilian = true;
+				global.first_fire = true;
 				//Shake screen
 				screenshake(3, 5, 0.5);
 				// Play sound for when fire defeats the player
@@ -46,6 +48,8 @@ function toGhost(fire = true)
 function fromGhost()
 {
 	global.ghost_satiety = 0;
+	global.first_civilian = true;
+	global.first_fire = true;
 	if instance_exists(obj_player) {
 		obj_player.ghost = false;
 	}

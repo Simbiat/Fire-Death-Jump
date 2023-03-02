@@ -31,8 +31,8 @@
   "physicsShapePoints": [],
   "physicsStartAwake": true,
   "properties": [
-    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"image_xscale","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"1.5","varType":0,},
-    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"image_yscale","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"1.5","varType":0,},
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"image_xscale","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"1.3","varType":0,},
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"image_yscale","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"1.3","varType":0,},
   ],
   "solid": false,
   "spriteId": {

@@ -25,3 +25,12 @@ randomize();
 // Initialize global highscore variables
 global.highscore_blood = 0;
 global.highscore_height = 0;
+global.first_civilian = true;
+global.first_fire = true;
+
+if !variable_global_exists("blood_font") {
+	global.blood_font = font_add_sprite_ext(spr_blood_font, "0123456789abcdefghijklmnopqrstuvwxyz", true, 1);
+}
+if !variable_global_exists("blood_font_scale") {
+	global.blood_font_scale = 0.5;
+}

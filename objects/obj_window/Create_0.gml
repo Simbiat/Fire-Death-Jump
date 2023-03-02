@@ -9,7 +9,7 @@ fire_fade_alpha = 0;
 // Y offset for the smoke instance to appear on
 // this window
 //smoke_y_offset = -268;
-smoke_y_offset = -200;
+smoke_y_offset = -320;
 
 // Create smoke instance and store its ID in the
 // my_smoke variable
