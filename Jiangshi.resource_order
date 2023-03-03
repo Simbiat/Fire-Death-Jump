@@ -104,6 +104,7 @@
     {"name":"snd_player_jump_1","order":3,"path":"sounds/snd_player_jump_1/snd_player_jump_1.yy",},
     {"name":"windows","order":8,"path":"scripts/windows/windows.yy",},
     {"name":"spr_fangs","order":3,"path":"sprites/spr_fangs/spr_fangs.yy",},
+    {"name":"obj_fire_permanent","order":7,"path":"objects/obj_fire_permanent/obj_fire_permanent.yy",},
     {"name":"spr_invis_wall","order":15,"path":"sprites/spr_invis_wall/spr_invis_wall.yy",},
     {"name":"spr_ember_long","order":4,"path":"sprites/spr_ember_long/spr_ember_long.yy",},
     {"name":"spr_civilian_killed_1","order":4,"path":"sprites/spr_civilian_killed_1/spr_civilian_killed_1.yy",},

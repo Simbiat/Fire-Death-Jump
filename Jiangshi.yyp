@@ -132,6 +132,7 @@
     {"id":{"name":"spr_civilian_0","path":"sprites/spr_civilian_0/spr_civilian_0.yy",},"order":0,},
     {"id":{"name":"spr_fangs","path":"sprites/spr_fangs/spr_fangs.yy",},"order":3,},
     {"id":{"name":"spr_blood_droplets","path":"sprites/spr_blood_droplets/spr_blood_droplets.yy",},"order":0,},
+    {"id":{"name":"obj_fire_permanent","path":"objects/obj_fire_permanent/obj_fire_permanent.yy",},"order":7,},
     {"id":{"name":"spr_brick_tile","path":"sprites/spr_brick_tile/spr_brick_tile.yy",},"order":0,},
     {"id":{"name":"spr_invis_wall","path":"sprites/spr_invis_wall/spr_invis_wall.yy",},"order":15,},
     {"id":{"name":"spr_ember_long","path":"sprites/spr_ember_long/spr_ember_long.yy",},"order":4,},
