@@ -36,8 +36,8 @@
   ],
   "solid": false,
   "spriteId": {
-    "name": "spr_fire",
-    "path": "sprites/spr_fire/spr_fire.yy",
+    "name": "spr_fire_alt",
+    "path": "sprites/spr_fire_alt/spr_fire_alt.yy",
   },
   "spriteMaskId": null,
   "visible": true,

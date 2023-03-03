@@ -6,5 +6,5 @@ if (y > room_height + 200)
 if instance_exists(obj_player) && obj_player.ghost {
 	sprite_index = spr_fire_particle;
 } else {
-	sprite_index = spr_fire;
+	sprite_index = spr_fire_alt;
 }

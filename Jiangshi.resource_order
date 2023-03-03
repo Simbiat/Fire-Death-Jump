@@ -143,6 +143,7 @@
     {"name":"spr_window","order":1,"path":"sprites/spr_window/spr_window.yy",},
     {"name":"obj_invis_wall","order":5,"path":"objects/obj_invis_wall/obj_invis_wall.yy",},
     {"name":"spr_button","order":1,"path":"sprites/spr_button/spr_button.yy",},
+    {"name":"spr_fire_alt","order":16,"path":"sprites/spr_fire_alt/spr_fire_alt.yy",},
     {"name":"seq_transition_end","order":4,"path":"sequences/seq_transition_end/seq_transition_end.yy",},
     {"name":"fnt_premenu","order":2,"path":"fonts/fnt_premenu/fnt_premenu.yy",},
   ],
