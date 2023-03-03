@@ -17,10 +17,20 @@ function playerMovement()
 		if keyboard_check(vk_left) || keyboard_check(ord("A")) || keyboard_check(vk_numpad4) {
 			// Move target X left
 			target_x -= move_speed;
+			//Counter-intuitevly we need to use "+ sprite_width", and not "-", because at this point
+			//the sprite is reversed
+			//+25 is to allow the sprite's hands to touch the edge as closely as possible
+			if collision_line(target_x, y, target_x + sprite_width/2 + 25, y, left_wall, false, true) {
+				target_x = xprevious;
+			}
 		}
 		if keyboard_check(vk_right) || keyboard_check(ord("D")) || keyboard_check(vk_numpad6) {
 			// Move target X left
 			target_x += move_speed;
+			//-25 is to allow the sprite's hands to touch the edge as closely as possible
+			if collision_line(target_x, y, target_x + sprite_width/2 - 25, y, right_wall, false, true) {
+				target_x = xprevious;
+			}
 		}
 	}
 }

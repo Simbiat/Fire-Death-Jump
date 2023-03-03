@@ -132,12 +132,12 @@ function fillingWindow()
 	if global.first_civilian && has_civilian {
 		hint_civilian = true;
 		windowHintVariables();
-		//global.first_civilian = false;
+		global.first_civilian = false;
 	}
 	if global.first_fire && has_fire {
 		hint_fire = true;
 		windowHintVariables();
-		//global.first_fire = false;
+		global.first_fire = false;
 	}
 }
 
@@ -231,6 +231,7 @@ function windowHintVariables()
 	switch (choice) {
 		case 0:
 			//Align based on the 2nd word
+			//I have not found a reason why I need to add 70 in these calculations.
 			posX2 = random_range(-x + 70, leftOffset - maxWidth);
 			posY2 = random_range(bbox_top + totalHeight/2, bbox_bottom + totalHeight/3);
 			posX1 = posX2 + random_range(-string_width(word1)*global.blood_font_scale - 40, string_width(word2)*global.blood_font_scale + 40);
