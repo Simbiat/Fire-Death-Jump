@@ -133,11 +133,15 @@ function fillingWindow()
 		hint_civilian = true;
 		windowHintVariables();
 		global.first_civilian = false;
+		//Set timer to reset hint
+		obj_game.alarm[3] = 60*room_speed;
 	}
 	if global.first_fire && has_fire {
 		hint_fire = true;
 		windowHintVariables();
 		global.first_fire = false;
+		//Set timer to reset hint
+		obj_game.alarm[2] = 60*room_speed;
 	}
 }
 

@@ -32,6 +32,9 @@ function toGhost(fire = true)
 				global.ghost_timer = 100 - obj_player.deaths * 10;
 				global.first_civilian = true;
 				global.first_fire = true;
+				//Stop hint timers
+				obj_player.alarm[2] = -1;
+				obj_player.alarm[3] = -1;
 				//Shake screen
 				screenshake(3, 5, 0.5);
 				// Play sound for when fire defeats the player
@@ -50,6 +53,9 @@ function fromGhost()
 	global.ghost_satiety = 0;
 	global.first_civilian = true;
 	global.first_fire = true;
+	//Stop hint timers
+	obj_player.alarm[2] = -1;
+	obj_player.alarm[3] = -1;
 	if instance_exists(obj_player) {
 		obj_player.ghost = false;
 	}
