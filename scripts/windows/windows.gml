@@ -1,3 +1,23 @@
+function createSecondaryWindow()
+{
+	//Logic to generate a secondary window
+	//Check if there is enough space for a secondary window
+	var toRight = bbox_right + 133 + sprite_width <= room_width;
+	var toLeft = bbox_left - 133 - sprite_width >= 0;
+	//Also do not generate secondary windows if we expect to show hints
+	if !hint_fire && !hint_civilian && (toRight || toLeft) {
+		//Roll the dice
+		if (chance == 1 && random_range(0, 100) <= 35) || (chance != 1 && random_range(0, 100) <= 15) {
+			//Generate secondary window
+			if toRight {
+				instance_create_layer(bbox_right + 266, y, "Instances", obj_window, {secondary: true, parentOnFire: chance == 1, parentHasPerson: chance == 0});
+			} else {
+				instance_create_layer(bbox_left - 266, y, "Instances", obj_window, {secondary: true, parentOnFire: chance == 1, parentHasPerson: chance == 0});
+			}
+		}
+	}
+}
+
 function fillingWindow()
 {
 	//Reset some settings
@@ -112,12 +132,12 @@ function fillingWindow()
 	if global.first_civilian && has_civilian {
 		hint_civilian = true;
 		windowHintVariables();
-		global.first_civilian = false;
+		//global.first_civilian = false;
 	}
 	if global.first_fire && has_fire {
 		hint_fire = true;
 		windowHintVariables();
-		global.first_fire = false;
+		//global.first_fire = false;
 	}
 }
 
@@ -158,16 +178,19 @@ function windowHintVariables()
 	toLeft = collision_rectangle(bbox_left, bbox_top, 0, bbox_bottom, obj_window, false, true);
 	toRight = collision_rectangle(bbox_right, bbox_top, room_width, bbox_bottom, obj_window, false, true);
 	toBottom = collision_rectangle(x - totalWidth, y + 120, x + totalWidth, y + 120 + maxHeight*2 + sprite_height*0.75, obj_window, false, true);
+	//Minimum offsets for left and right. Based on sprite's width since bbox does not cover whole image
+	var leftOffset = -sprite_width/2 - 30;
+	var rightOffset = sprite_width/2 + 30;
 	//Check if there is enough space to left or right, if there no collisions
 	if toLeft == noone {
-		if bbox_left - maxWidth - 50 > 0 {
+		if x + leftOffset - maxWidth >= 0 {
 			toLeft = true;
 		} else {
 			toLeft = false;
 		}
 	}
 	if toRight == noone {
-		if bbox_right + maxWidth + 50 < room_width {
+		if x + rightOffset + maxWidth <= room_width {
 			toRight = true;
 		} else {
 			toRight = false;
@@ -205,42 +228,41 @@ function windowHintVariables()
 		}
 	}
 	//Determine actual coordinates based on choice
-	//choice = 0;
 	switch (choice) {
 		case 0:
 			//Align based on the 2nd word
-			posX2 = random_range(0 - x + 10, bbox_left - maxWidth - x - 40);
+			posX2 = random_range(-x + 70, leftOffset - maxWidth);
 			posY2 = random_range(bbox_top + totalHeight/2, bbox_bottom + totalHeight/3);
 			posX1 = posX2 + random_range(-string_width(word1)*global.blood_font_scale - 40, string_width(word2)*global.blood_font_scale + 40);
 			//Adjust if 1st word is out of bounds
-			if posX1 < 0 - x + 10 {
-				posX1 = 0 - x + 10;
+			if posX1 < -x + 70 {
+				posX1 = -x + 70;
 			}
-			if posX1 > bbox_left - string_width(word1)*global.blood_font_scale - x - 40 {
-				posX1 = bbox_left - string_width(word1)*global.blood_font_scale - x - 40;
+			if posX1 > leftOffset - string_width(word1)*global.blood_font_scale {
+				posX1 = leftOffset - string_width(word1)*global.blood_font_scale;
 			}
 			posY1 = posY2 - string_height(word2)/2*global.blood_font_scale - string_height(word1)/2*global.blood_font_scale - random_range(0, 40);
 			posX3 = posX2 + random_range(-string_width(word3)*global.blood_font_scale - 40, string_width(word2)*global.blood_font_scale + 40);
 			//Adjust if 3rd word is out of bounds
-			if posX3 < 0 - x + 10 {
-				posX3 = 0 - x + 10;
+			if posX3 < -x + 70 {
+				posX3 = -x + 70;
 			}
-			if posX3 > bbox_left - string_width(word3)*global.blood_font_scale - x - 40 {
-				posX3 = bbox_left - string_width(word3)*global.blood_font_scale - x - 40;
+			if posX3 > leftOffset - string_width(word3)*global.blood_font_scale {
+				posX3 = leftOffset - string_width(word3)*global.blood_font_scale;
 			}
 			posY3 = posY2 + string_height(word2)/2*global.blood_font_scale + string_height(word3)/2*global.blood_font_scale + random_range(0, 40);
 			break;
 		case 1:
 			//Align based on the 2nd word
-			posX2 = random_range(bbox_right - x + 40, room_width - maxWidth - x);
+			posX2 = random_range(rightOffset, room_width - maxWidth - x);
 			posY2 = random_range(bbox_top + totalHeight/2, bbox_bottom + totalHeight/3);
 			posX1 = posX2 + random_range(-string_width(word1)*global.blood_font_scale - 40, string_width(word2)*global.blood_font_scale + 40);
 			//Adjust if 1st word is out of bounds
 			if posX1 > room_width - string_width(word1)*global.blood_font_scale - x {
 				posX1 = room_width - string_width(word1)*global.blood_font_scale - x;
 			}
-			if posX1 < bbox_right - x + 40 {
-				posX1 = bbox_right - x + 40;
+			if posX1 < rightOffset {
+				posX1 = rightOffset;
 			}
 			posY1 = posY2 - string_height(word2)/2*global.blood_font_scale - string_height(word1)/2*global.blood_font_scale - random_range(0, 40);
 			posX3 = posX2 + random_range(-string_width(word3)*global.blood_font_scale - 40, string_width(word2)*global.blood_font_scale + 40);
@@ -248,8 +270,8 @@ function windowHintVariables()
 			if posX3 > room_width - string_width(word3)*global.blood_font_scale - x {
 				posX3 = room_width - string_width(word3)*global.blood_font_scale - x;
 			}
-			if posX3 < bbox_right - x + 40 {
-				posX3 = bbox_right - x + 40;
+			if posX3 < rightOffset {
+				posX3 = rightOffset;
 			}
 			posY3 = posY2 + string_height(word2)/2*global.blood_font_scale + string_height(word3)/2*global.blood_font_scale + random_range(0, 40);
 			break;
