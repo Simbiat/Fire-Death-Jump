@@ -6,6 +6,13 @@ function permaDeath(manual = false)
 		if obj_game.ghost_seq_to != noone {
 			fromGhost();
 		}
+		//Destroy skull icons
+		for (var i = 0; i < 5; ++i) {
+			if obj_game.death_seqs[i] != noone {
+				layer_sequence_destroy(obj_game.death_seqs[i]);
+				obj_game.death_seqs[i] = noone;
+			}
+		}
 	}
 	instance_create_layer(obj_player.x, obj_player.y, "Player", obj_player_defeated);
 	instance_destroy(obj_player);
@@ -25,8 +32,9 @@ function toGhost(fire = true)
 				//Perma death
 				permaDeath();
 			} else {
-				obj_game.ghost_seq_to = layer_sequence_create("HUD", 0, 0, seq_to_ghost);
 				obj_player.deaths += 1;
+				obj_game.death_seqs[obj_player.deaths - 1] = layer_sequence_create("HUD", 0, 0, asset_get_index("seq_death_" + string(obj_player.deaths)));
+				obj_game.ghost_seq_to = layer_sequence_create("HUD", 0, 0, seq_to_ghost);
 				obj_player.ghost = true;
 				global.ghost_satiety = 10;
 				global.ghost_timer = 100 - obj_player.deaths * 10;

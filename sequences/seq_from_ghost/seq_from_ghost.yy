@@ -32,8 +32,8 @@
     "Keyframes": [],
   },
   "parent": {
-    "name": "Sequences",
-    "path": "folders/Sequences.yy",
+    "name": "Ghost Mode",
+    "path": "folders/Sequences/Ghost Mode.yy",
   },
   "playback": 0,
   "playbackSpeed": 60.0,
