@@ -16,7 +16,11 @@ function fillingWindow()
 		// unless it's changed in the default case at the bottom
 		image_alpha = random_range(0.4, 1);
 	}
-
+	
+	//Calculate fire/civilian chance based on height, to increase the challenge 
+	//and potential reward for every 500 meters. Cap fire at 45% and civilians at 55%
+	var fireChance = min(20 + 5*(global.score_height/500), 45);
+	var civChance = min(20 + 5*(global.score_height/500), 55);
 	// Roll a dice for what happens to this window
 	// Value is between 0 and 3 (inclusive)
 	// 0 - Civilian on this window
@@ -32,10 +36,6 @@ function fillingWindow()
 				chance = irandom_range(1, 3);
 			}
 		} else {
-			//Calculate fire/civilian chance based on height, to increase the challenge 
-			//and potential reward for every 500 meters. Cap fire at 45% and civilians at 55%
-			var fireChance = min(20 + 5*(global.score_height/500), 45);
-			var civChance = min(20 + 5*(global.score_height/500), 55);
 			var heightChance = random_range(0, 100);
 			if heightChance <= fireChance {
 				chance = 1;
@@ -48,11 +48,11 @@ function fillingWindow()
 	} else {
 		//If parent window is on fire, have slightly lower chance of spawning a window with fire
 		if parentOnFire {
-			if random_range(0, 100) <= 15 {
+			if random_range(0, 100) <= fireChance - 15 {
 				chance = 1;
 			} else {
 				//Need to also lower the chance of civilian, or it can result in too many of those
-				if random_range(0, 100) <= 20 {
+				if random_range(0, 100) <= civChance - 20 {
 					chance = 0;
 				} else {
 					chance = 2;
@@ -61,14 +61,14 @@ function fillingWindow()
 		} else {
 			if parentHasPerson {
 				//Lower chance of also having a civillian
-				if random_range(0, 100) <= 15 {
+				if random_range(0, 100) <= civChance - 15 {
 					chance = 0;
 				} else {
 					chance = irandom_range(1, 3);
 				}
 			} else {
 				//Have a slightly higher chance of having a fire or a civillian
-				if random_range(0, 100) <= 60 {
+				if random_range(0, 100) <= civChance + 10 {
 					chance = irandom_range(0, 1);
 				} else {
 					chance = 2;
