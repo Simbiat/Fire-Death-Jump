@@ -16,7 +16,7 @@ if (sprite_index == sprite_jump || sprite_index = sprite_hold_jump)
 		var shoot_sound = choose(snd_player_jump_1, snd_player_jump_2, snd_player_jump_3);
 
 		// Play that sound
-		audio_play_sound(shoot_sound, 0, 0);
+		audio_play_sound(shoot_sound, 10, 0);
 
 		// Create jump effect at 0, bbox_bottom
 		// bbox_bottom is the bottom edge of the

@@ -1,6 +1,3 @@
-// Stop the menu music
-audio_stop_sound(snd_menu_music);
-
 // Play the game music
 audio_play_sound(snd_game_music, 0, 1);
 

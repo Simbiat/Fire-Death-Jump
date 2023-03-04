@@ -1,7 +1,3 @@
-// Make the player jump and enable gravity
-vspeed = -35;
-gravity = 0.8;
-
 // Initialize the player's blood and height scores as global variables
 global.score_blood = 0;
 global.score_height = 0;
@@ -16,16 +12,13 @@ move_speed = 12;
 
 // Target position on x axis where this instance needs to move
 // Used to smoothen horizontal movement
-target_x = x;
-
-// Whether the player is currently wrapping the screen horizontally
-wrapping = false;
-
-// How much margin the player has (horizontally, from the center) to wrap on the sides of the screen
-wrap_margin = 70;
+//target_x = x;
+target_x = 544;
 
 // Start with the "in-air" sprite
 sprite_index = sprite_air;
 
 // Touch input for the X axis (relative variable, default 0)
 touch_input_x = 0;
+
+alarm[2] = 1*room_speed;

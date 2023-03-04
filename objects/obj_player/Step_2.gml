@@ -1,3 +1,4 @@
+if moving {
 // If the player is falling down
 if (vspeed > 0)
 {
@@ -49,4 +50,5 @@ if (gravity > 0)
 			image_xscale = -1;
 		}
 	}
+}
 }
