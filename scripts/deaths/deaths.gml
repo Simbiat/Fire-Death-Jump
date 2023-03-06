@@ -47,8 +47,8 @@ function toGhost()
 				obj_player.ghost = true;
 				//Reset globals
 				global.ghost_satiety = 10;
-				//Timer is reduced by 10 seconds but should not be less than 30 seconds (otherwise it is next to unbeatable even with increased chances)
-				global.ghost_timer = max(70 - obj_player.deaths * 10, 30);
+				//Timer is reduced by 10 seconds but should not be less than 20 seconds (otherwise it is next to unbeatable even with increased chances)
+				global.ghost_timer = max(70 - obj_player.deaths * 10, 25);
 				global.first_civilian = true;
 				global.first_fire = true;
 				//Stop hint timers
@@ -97,22 +97,23 @@ function fromGhost()
 function civilianDeath()
 {
 	// If civilian is not killed yet
-	show_debug_message("killed: "+string(killed)+"; eaten: "+string(eaten))
 	if (killed == false && eaten == false) {
-		show_debug_message("not killed or eaten");
 		if other.ghost {
 			if other.vspeed == 0 {
 				if hp > 0 {
-					show_debug_message("holding down: "+string(isHoldingDown()))
 					//Add a little bit of blood if we are not holding down
-					if alarm[3] < 0 && alarm[2] < 0 {
+					if alarm[3] < 0 {
 						if !isHoldingDown() {
-							if hp == 0 {
-								//Synchronize with the "death" alarm
-								alarm[2] = 4;
-							} else {
-								global.score_blood += random_range(0.2, 0.5);
-								alarm[2] = 0.9*room_speed;
+							if alarm[2] < 0 {
+								if hp == 0 {
+									//Synchronize with the "death" alarm
+									alarm[2] = 4;
+								} else {
+									global.score_blood += random_range(0.2, 0.5);
+									hp -= 1;
+									audio_play_sound(snd_civilian_feed, 0, 0);
+									alarm[2] = 0.9*room_speed;
+								}
 							}
 						} else {
 							switch(sprite_index) {
@@ -147,13 +148,10 @@ function civilianDeath()
 				}
 			}
 		} else {
-			show_debug_message("less than 3 hp and eaten");
 			if hp < 3 {
-				show_debug_message("less than 3 hp and eaten");
 				//We will be here, if civilian dies during feeding
 				eaten = true;
 			} else {
-				show_debug_message("3hp killed");
 				// Increase blood score
 				global.score_blood += random_range(4.5, 5.7);
 				// Set killed to true
@@ -162,7 +160,6 @@ function civilianDeath()
 		}
 	}
 	if killed || eaten {
-		show_debug_message("killed or eaten")
 		// Change sprite to transition sprite depending on current sprite
 		switch(sprite_index) {
 			case spr_civilian_0:
