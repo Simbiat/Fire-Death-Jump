@@ -21,4 +21,5 @@ sprite_index = sprite_air;
 // Touch input for the X axis (relative variable, default 0)
 touch_input_x = 0;
 
-alarm[2] = 1*room_speed;
+//Delay movement
+alarm[2] = room_speed;

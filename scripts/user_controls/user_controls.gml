@@ -1,13 +1,17 @@
 function isHoldingDown()
 {
 	//Hold jumping if ghost sequence is being played out
-	if obj_game.ghost_seq_to != noone && !layer_sequence_is_finished(obj_game.ghost_seq_to) {
-		return true;
-	}
-	if keyboard_check(vk_down) || mouse_check_button(mb_left) || keyboard_check(vk_numpad2) ||  keyboard_check(ord("S")) {
-		return true;
+	if room == rm_game {
+		if obj_game.ghost_seq_to != noone && !layer_sequence_is_finished(obj_game.ghost_seq_to) {
+			return true;
+		}
+		if keyboard_check(vk_down) || mouse_check_button(mb_left) || keyboard_check(vk_numpad2) ||  keyboard_check(ord("S")) {
+			return true;
+		} else {
+			return false;
+		}
 	} else {
-		return false;
+		return false;	
 	}
 }
 
@@ -38,21 +42,60 @@ function playerMovement()
 //React to arrows up and down (to navigate menu)
 function buttonSelection()
 {
-	
+	//There is probably a much better solution to move around menus, but this should suffice
 	if keyboard_check_pressed(vk_down) ||  keyboard_check_pressed(vk_up) {
-		//Iterrate through existing buttons
-		var buttonSelected = false;
+		//Iterrate through existing buttons determining which one is selected and deselecting all of them
+		var buttonSelected = noone;
 		for (var i = 0; i < instance_number(obj_button_parent); ++i;) {
 			button = instance_find(obj_button_parent, i);
 			if button.selected {
 				button.selected = false;
-			} else {
-				if !buttonSelected {
-					button.selected = 1;
-					buttonSelected = true;
-					audio_play_sound(snd_button_hover, 0, 0);
-				}
+				buttonSelected = button.object_index;
 			}
+		}
+		//Determine the new button based on what button was selected
+		var newButton = noone;
+		switch (buttonSelected) {
+			//First 2 variables are for gameover screen
+		    case obj_button_menu:
+		        newButton = obj_button_replay;
+		        break;
+			case obj_button_replay:
+		        newButton = obj_button_menu;
+		        break;
+			//Next 3 are for the main menu
+			case obj_button_play:
+				if keyboard_check_pressed(vk_down) {
+					newButton = obj_button_tutorial;
+				} else {
+					newButton = obj_button_quit;
+				}
+		        break;
+			case obj_button_quit:
+		        if keyboard_check_pressed(vk_down) {	
+					newButton = obj_button_play;
+				} else {
+					newButton = obj_button_tutorial;
+				}
+		        break;
+			case obj_button_tutorial:
+		        if keyboard_check_pressed(vk_down) {	
+					newButton = obj_button_quit;
+				} else {
+					newButton = obj_button_play;
+				}
+		        break;
+		    default:
+		        if instance_exists(obj_button_replay) {
+					newButton = obj_button_replay;
+				} else if instance_exists(obj_button_play) {
+					newButton = obj_button_play;
+				}
+		        break;
+		}
+		with (newButton) {
+			selected = true;
+			audio_play_sound(snd_button_hover, 0, 0);
 		}
 	}
 }
@@ -77,6 +120,8 @@ function buttonEscape()
 	if keyboard_check_pressed(vk_escape) {
 		if instance_exists(obj_player) {
 			permaDeath(true);
+		} else if room == rm_tutorial {
+			room_goto(rm_menu);
 		} else if instance_exists(obj_button_menu) {
 			with (obj_button_menu) {
 				event_user(0);

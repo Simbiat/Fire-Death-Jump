@@ -36,6 +36,7 @@ function toGhost(fire = true)
 				obj_game.death_seqs[obj_player.deaths - 1] = layer_sequence_create("HUD", 0, 0, asset_get_index("seq_death_" + string(obj_player.deaths)));
 				obj_game.ghost_seq_to = layer_sequence_create("HUD", 0, 0, seq_to_ghost);
 				obj_player.ghost = true;
+				//Reset globals
 				global.ghost_satiety = 10;
 				global.ghost_timer = 100 - obj_player.deaths * 10;
 				global.first_civilian = true;
@@ -51,6 +52,10 @@ function toGhost(fire = true)
 				} else {
 					audio_play_sound(snd_player_defeat_bottom, 0, 0);
 				}
+				//Change audio track
+				var audioOffset = audio_sound_get_track_position(obj_game.current_music);
+				audio_stop_sound(obj_game.current_music);
+				obj_game.current_music = audio_play_sound(snd_ghost_mode, 0, 1, 1, audioOffset);
 			}
 		}
 	}
@@ -76,6 +81,10 @@ function fromGhost()
 			obj_game.ghost_seq_to = noone;
 			obj_game.alarm[1] = room_speed;
 			obj_game.ghost_seq_from = layer_sequence_create("HUD", 0, 0, seq_from_ghost);
+			//Change audio track
+			var audioOffset = audio_sound_get_track_position(obj_game.current_music);
+			audio_stop_sound(obj_game.current_music);
+			obj_game.current_music = audio_play_sound(snd_game_music, 0, 1, 1, audioOffset);
 		}
 	}
 }

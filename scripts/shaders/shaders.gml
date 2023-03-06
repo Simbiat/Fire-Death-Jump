@@ -1,6 +1,6 @@
 function grayscale()
 {
-	if instance_exists(obj_player) && obj_player.ghost {
+	if (instance_exists(obj_player) && obj_player.ghost) || (instance_exists(obj_player_tut) && obj_player_tut.ghost) {
 		shader_set(sha_grayscale);
 	}
 	draw_self();
@@ -9,7 +9,7 @@ function grayscale()
 
 function bloodShader()
 {
-	if instance_exists(obj_player) && obj_player.ghost {
+	if (instance_exists(obj_player) && obj_player.ghost) || (instance_exists(obj_player_tut) && obj_player_tut.ghost) {
 		shader_set(sha_tone);
 		switch hp {
 			case 3:

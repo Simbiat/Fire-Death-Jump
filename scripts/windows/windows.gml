@@ -1,18 +1,20 @@
 function createSecondaryWindow()
 {
 	//Logic to generate a secondary window
-	//Check if there is enough space for a secondary window
-	var toRight = bbox_right + 133 + sprite_width <= room_width;
-	var toLeft = bbox_left - 133 - sprite_width >= 0;
-	//Also do not generate secondary windows if we expect to show hints
-	if !hint_fire && !hint_civilian && (toRight || toLeft) {
-		//Roll the dice
-		if (chance == 1 && random_range(0, 100) <= 35) || (chance != 1 && random_range(0, 100) <= 15) {
-			//Generate secondary window
-			if toRight {
-				instance_create_layer(bbox_right + 266, y, "Instances", obj_window, {secondary: true, parentOnFire: chance == 1, parentHasPerson: chance == 0});
-			} else {
-				instance_create_layer(bbox_left - 266, y, "Instances", obj_window, {secondary: true, parentOnFire: chance == 1, parentHasPerson: chance == 0});
+	//Do not generate secondary windows if we expect to show hints
+	if hint_fire == false && hint_civilian == false {
+		//Check if there is enough space for a secondary window
+		var toRight = bbox_right + 133 + sprite_width <= room_width;
+		var toLeft = bbox_left - 133 - sprite_width >= 0;
+		if toRight || toLeft {
+			//Roll the dice
+			if (chance == 1 && random_range(0, 100) <= 35) || (chance != 1 && random_range(0, 100) <= 15) {
+				//Generate secondary window
+				if toRight {
+					instance_create_layer(bbox_right + 266, y, "Instances", obj_window, {secondary: true, parentOnFire: chance == 1, parentHasPerson: chance == 0});
+				} else {
+					instance_create_layer(bbox_left - 266, y, "Instances", obj_window, {secondary: true, parentOnFire: chance == 1, parentHasPerson: chance == 0});
+				}
 			}
 		}
 	}
@@ -106,20 +108,12 @@ function fillingWindow()
 	{
 		// Create civilian and change window frame to 2 which is used for civilians
 		case 0:
-			has_civilian = true;
-			instance_create_layer(x, y, "Spawns", obj_fire_civilian); // Just a visual fire in the background
-			
-			instance_create_layer(x, y + 10, "Spawns", obj_civilian); // The actual civilian
-		
-			image_index = irandom_range(5, 10);
+			createCivilian();
 		break;
 	
 		// Create fire and change frame to 3 which is used for fire
 		case 1:
-			has_fire = true;
-			my_fire = instance_create_layer(x, y, "Spawns", obj_fire);
-		
-			image_index = irandom_range(11, 16);
+			createFire();
 		break;
 	
 		// If neither of the other cases ran
@@ -309,4 +303,19 @@ function windowHints()
 	draw_text_transformed(x + posX3, y + posY3, word3, global.blood_font_scale, global.blood_font_scale, 0);
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
+}
+
+function createCivilian()
+{
+	has_civilian = true;
+	instance_create_layer(x, y, "Spawns", obj_fire_civilian); // Just a visual fire in the background
+	instance_create_layer(x, y + 10, "Spawns", obj_civilian); // The actual civilian
+	image_index = irandom_range(5, 10);
+}
+
+function createFire()
+{
+	has_fire = true;
+	my_fire = instance_create_layer(x, y, "Spawns", obj_fire);
+	image_index = irandom_range(11, 16);
 }

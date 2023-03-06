@@ -1,5 +1,6 @@
 // Play the game music
-audio_play_sound(snd_game_music, 0, 1);
+current_music = audio_play_sound(snd_game_music, 0, 1);
+
 
 // Create transition "end" sequence which ends
 // the transition, because the game has started
