@@ -11,5 +11,5 @@ if (y >= room_height)
 	vspeed = 0;
 	// Disable gravity so the player stays stopped
 	gravity = 0;
-	toGhost(false);
+	toGhost();
 }

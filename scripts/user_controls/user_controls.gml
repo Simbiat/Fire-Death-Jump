@@ -15,6 +15,19 @@ function isHoldingDown()
 	}
 }
 
+function nextTutorial()
+{
+	if keyboard_check_pressed(vk_right) || keyboard_check_pressed(ord("D")) || keyboard_check_pressed(vk_numpad6) ||
+		keyboard_check_pressed(vk_up) || keyboard_check_pressed(vk_numpad8) ||  keyboard_check_pressed(ord("W")) ||
+		keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter) {
+		if instance_exists(obj_next) {
+			with (obj_next) {
+				event_user(0);
+			}
+		}
+	}
+}
+
 function playerMovement()
 {
 	if (gravity > 0) {
@@ -39,19 +52,27 @@ function playerMovement()
 	}
 }
 
+function getSelectedButton()
+{
+	var buttonSelected = noone;
+	for (var i = 0; i < instance_number(obj_button_parent); ++i;) {
+		button = instance_find(obj_button_parent, i);
+		if button.selected {
+			buttonSelected = button.object_index;
+		}
+	}
+	return buttonSelected;
+}
+
 //React to arrows up and down (to navigate menu)
-function buttonSelection()
+function buttonSelection(fromCode = false)
 {
 	//There is probably a much better solution to move around menus, but this should suffice
-	if keyboard_check_pressed(vk_down) ||  keyboard_check_pressed(vk_up) {
+	if keyboard_check_pressed(vk_down) ||  keyboard_check_pressed(vk_up) || fromCode {
 		//Iterrate through existing buttons determining which one is selected and deselecting all of them
-		var buttonSelected = noone;
-		for (var i = 0; i < instance_number(obj_button_parent); ++i;) {
-			button = instance_find(obj_button_parent, i);
-			if button.selected {
-				button.selected = false;
-				buttonSelected = button.object_index;
-			}
+		var buttonSelected = getSelectedButton();
+		with (obj_button_parent) {
+			selected = false;
 		}
 		//Determine the new button based on what button was selected
 		var newButton = noone;
@@ -95,7 +116,9 @@ function buttonSelection()
 		}
 		with (newButton) {
 			selected = true;
-			audio_play_sound(snd_button_hover, 0, 0);
+			if !fromCode {
+				audio_play_sound(snd_button_hover, 0, 0);
+			}
 		}
 	}
 }

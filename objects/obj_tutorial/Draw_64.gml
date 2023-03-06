@@ -1,5 +1,5 @@
 /// @description Heat effect
-if instance_exists(obj_player) && obj_player.ghost {
+if instance_exists(obj_player_tut) && obj_player_tut.ghost {
 	shader_set(sha_heat);
 	shader_set_uniform_f(shader_get_uniform(sha_heat, "time"), current_time);
 	draw_surface(application_surface, 0,0);

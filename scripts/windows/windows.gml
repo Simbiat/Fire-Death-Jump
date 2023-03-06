@@ -101,7 +101,7 @@ function fillingWindow()
 
 	// Change frame to closed window by default
 	// Either 0 or 1
-	image_index = irandom_range(0, 4);
+	image_index = irandom_range(0, 6);
 
 	// Do something based on the random chance value we got
 	switch (chance)
@@ -310,12 +310,12 @@ function createCivilian()
 	has_civilian = true;
 	instance_create_layer(x, y, "Spawns", obj_fire_civilian); // Just a visual fire in the background
 	instance_create_layer(x, y + 10, "Spawns", obj_civilian); // The actual civilian
-	image_index = irandom_range(5, 10);
+	image_index = irandom_range(7, 13);
 }
 
 function createFire()
 {
 	has_fire = true;
 	my_fire = instance_create_layer(x, y, "Spawns", obj_fire);
-	image_index = irandom_range(11, 16);
+	image_index = irandom_range(14, 20);
 }

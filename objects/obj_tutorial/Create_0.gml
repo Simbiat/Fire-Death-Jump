@@ -23,4 +23,4 @@ with (fire_window_2) {
 }
 
 //Start 1st page
-alarm[2] = 2.25*room_speed;
+pageLoad(page+1);

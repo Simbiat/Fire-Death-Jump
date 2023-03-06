@@ -1,12 +1,18 @@
 // If the jump animation ended, make the player
 // jump, and start transition to in-air animation
-if (sprite_index == sprite_jump || sprite_index = sprite_hold_jump)
+if (sprite_index == sprite_jump || sprite_index = sprite_hold_jump || sprite_index = sprite_attack)
 {
 	if !isHoldingDown() && moving {
 		jump();
 	} else {
-		if sprite_index != sprite_hold_jump {
-			sprite_index = sprite_hold_jump;
+		if place_meeting(x, y, obj_civilian) && ghost {
+			if sprite_index != sprite_attack {
+				sprite_index = sprite_attack;
+			}
+		} else {
+			if sprite_index != sprite_hold_jump {
+				sprite_index = sprite_hold_jump;
+			}
 		}
 	}
 }

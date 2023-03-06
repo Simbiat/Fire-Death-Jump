@@ -8,10 +8,6 @@ if moving {
 			// Start in-air to fall transition
 			sprite_index = sprite_air_to_fall;
 			image_index = 0;
-	
-			// Run Alarm 0 later which will check if the
-			// player is still falling and play the falling sfx
-			alarm_set(0, 20);
 		}
 	}
 

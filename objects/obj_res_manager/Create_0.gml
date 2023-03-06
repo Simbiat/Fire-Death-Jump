@@ -1,8 +1,6 @@
 // Set game width, height and scale
 var width = 1080, height = 1920;
-if !variable_global_exists("screen_scale") {
-	global.screen_scale = min(1, display_get_height() / height)
-}
+global.screen_scale = min(1, display_get_height() / height)
 
 // Set window size and surface resolution
 window_set_size(width*global.screen_scale, height*global.screen_scale);
@@ -28,12 +26,10 @@ randomize();
 // Initialize global highscore variables
 global.highscore_blood = 0;
 global.highscore_height = 0;
+//And those for hints
 global.first_civilian = true;
 global.first_fire = true;
-
-if !variable_global_exists("blood_font") {
-	global.blood_font = font_add_sprite_ext(spr_blood_font, "0123456789abcdefghijklmnopqrstuvwxyz", true, 1);
-}
-if !variable_global_exists("blood_font_scale") {
-	global.blood_font_scale = 0.5;
-}
+//Those for fonts
+global.blood_font = font_add_sprite_ext(spr_blood_font, "0123456789abcdefghijklmnopqrstuvwxyz", true, 1);
+global.blood_font_scale = 0.5;
+global.font_line_sep = 50;

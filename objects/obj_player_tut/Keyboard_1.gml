@@ -1,2 +1,3 @@
-/// @description Exit tutorial
+/// @description Navigate tutorial
 buttonEscape();
+nextTutorial();

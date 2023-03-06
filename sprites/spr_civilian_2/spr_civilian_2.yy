@@ -26,8 +26,8 @@
   "nineSlice": null,
   "origin": 7,
   "parent": {
-    "name": "Civilians",
-    "path": "folders/Sprites/Civilians.yy",
+    "name": "Normal",
+    "path": "folders/Sprites/Civilians/Normal.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

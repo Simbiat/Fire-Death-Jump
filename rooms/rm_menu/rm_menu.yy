@@ -10,7 +10,7 @@
     {"name":"inst_5FD509C6","path":"rooms/rm_menu/rm_menu.yy",},
     {"name":"inst_22E5078A","path":"rooms/rm_menu/rm_menu.yy",},
   ],
-  "isDnd": true,
+  "isDnd": false,
   "layers": [
     {"resourceType":"GMRAssetLayer","resourceVersion":"1.0","name":"Transition","assets":[],"depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRAssetLayer","resourceVersion":"1.0","name":"Menu","assets":[

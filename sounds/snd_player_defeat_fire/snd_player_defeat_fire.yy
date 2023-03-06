@@ -10,7 +10,7 @@
   "bitRate": 512,
   "compression": 0,
   "conversionMode": 0,
-  "duration": 1.125011,
+  "duration": 1.549932,
   "parent": {
     "name": "Player",
     "path": "folders/Sounds/Player.yy",
