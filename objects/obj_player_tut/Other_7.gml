@@ -5,15 +5,7 @@ if (sprite_index == sprite_jump || sprite_index = sprite_hold_jump || sprite_ind
 	if !isHoldingDown() && moving {
 		jump();
 	} else {
-		if place_meeting(x, y, obj_civilian) && ghost {
-			if sprite_index != sprite_attack {
-				sprite_index = sprite_attack;
-			}
-		} else {
-			if sprite_index != sprite_hold_jump {
-				sprite_index = sprite_hold_jump;
-			}
-		}
+		sprite_index = sprite_hold_jump;
 	}
 }
 // If the jump to air transition animation

@@ -1,5 +1,5 @@
 /// @description Destroy "from ghost" sequence
-if obj_game.ghost_seq_from != noone {
-	layer_sequence_destroy(obj_game.ghost_seq_from);
-	obj_game.ghost_seq_from = noone;
+if ghost_seq_from != noone {
+	layer_sequence_destroy(ghost_seq_from);
+	ghost_seq_from = noone;
 }

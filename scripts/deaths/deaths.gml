@@ -33,49 +33,67 @@ function permaDeath(manual = false)
 	}
 }
 
-function toGhost()
+function toGhost(tutorial = false)
 {
-	if instance_exists(obj_player) {
-		if !obj_player.ghost {
-			if obj_player.deaths >= 5 {
-				//Perma death
-				permaDeath();
-			} else {
-				obj_player.deaths += 1;
-				obj_game.death_seqs[obj_player.deaths - 1] = layer_sequence_create("HUD", 0, 0, asset_get_index("seq_death_" + string(obj_player.deaths)));
-				obj_game.ghost_seq_to = layer_sequence_create("HUD", 0, 0, seq_to_ghost);
-				obj_player.ghost = true;
-				//Reset globals
-				global.ghost_satiety = 10;
-				//Timer is reduced by 10 seconds but should not be less than 20 seconds (otherwise it is next to unbeatable even with increased chances)
-				global.ghost_timer = max(70 - obj_player.deaths * 10, 25);
-				global.first_civilian = true;
-				global.first_fire = true;
-				//Stop hint timers
-				obj_player.alarm[2] = -1;
-				obj_player.alarm[3] = -1;
-				//Shake screen
-				screenshake(3, 5, 0.5);
-				audio_play_sound(snd_player_defeat_fire, 0, 0);
-				//Change audio track
-				var audioOffset = audio_sound_get_track_position(obj_game.current_music);
-				audio_stop_sound(obj_game.current_music);
-				obj_game.current_music = audio_play_sound(snd_ghost_mode, 0, 1, 1, audioOffset);
+	if tutorial == false {
+		if instance_exists(obj_player) {
+			if !obj_player.ghost {
+				if obj_player.deaths >= 5 {
+					//Perma death
+					permaDeath();
+				} else {
+					obj_player.deaths += 1;
+					obj_game.death_seqs[obj_player.deaths - 1] = layer_sequence_create("HUDSequences", 0, 0, asset_get_index("seq_death_" + string(obj_player.deaths)));
+					obj_game.ghost_seq_to = layer_sequence_create("HUDSequences", 0, 0, seq_to_ghost);
+					obj_player.ghost = true;
+					//Reset globals
+					global.ghost_satiety = 10;
+					//Timer is reduced by 10 seconds but should not be less than 20 seconds (otherwise it is next to unbeatable even with increased chances)
+					global.ghost_timer = max(70 - obj_player.deaths * 10, 25);
+					global.first_civilian = true;
+					global.first_fire = true;
+					//Stop hint timers
+					obj_game.alarm[2] = -1;
+					obj_game.alarm[3] = -1;
+					//Shake screen
+					screenshake(3, 5, 0.5);
+					audio_play_sound(snd_player_defeat_fire, 0, 0);
+					//Change audio track
+					var audioOffset = audio_sound_get_track_position(obj_game.current_music);
+					audio_stop_sound(obj_game.current_music);
+					obj_game.current_music = audio_play_sound(snd_ghost_mode, 0, 1, 1, audioOffset);
+				}
 			}
+		}
+	} else {
+		if instance_exists(obj_player_tut) {
+			obj_player_tut.deaths += 1;
+			obj_tutorial.death_seqs[obj_player_tut.deaths - 1] = layer_sequence_create("HUDSequences", 0, 0, asset_get_index("seq_death_" + string(obj_player_tut.deaths)));
+			obj_tutorial.ghost_seq_to = layer_sequence_create("HUDSequences", 0, 0, seq_to_ghost);
+			obj_player_tut.ghost = true;
+			//Shake screen
+			screenshake(3, 5, 0.5);
+			audio_play_sound(snd_player_defeat_fire, 0, 0);
 		}
 	}
 }
 
-function fromGhost()
+function fromGhost(tutorial = false)
 {
 	global.ghost_satiety = 0;
 	global.first_civilian = true;
 	global.first_fire = true;
 	//Stop hint timers
-	obj_player.alarm[2] = -1;
-	obj_player.alarm[3] = -1;
-	if instance_exists(obj_player) {
-		obj_player.ghost = false;
+	if tutorial {
+		if instance_exists(obj_player_tut) {
+			obj_player_tut.ghost = false;
+		}
+	} else {
+		obj_player.alarm[2] = -1;
+		obj_player.alarm[3] = -1;
+		if instance_exists(obj_player) {
+			obj_player.ghost = false;
+		}
 	}
 	if instance_exists(obj_corn_seed) {
 		instance_destroy(obj_corn_seed);
@@ -85,12 +103,16 @@ function fromGhost()
 			layer_sequence_destroy(obj_game.ghost_seq_to);
 			obj_game.ghost_seq_to = noone;
 			obj_game.alarm[1] = room_speed;
-			obj_game.ghost_seq_from = layer_sequence_create("HUD", 0, 0, seq_from_ghost);
+			obj_game.ghost_seq_from = layer_sequence_create("HUDSequences", 0, 0, seq_from_ghost);
 			//Change audio track
 			var audioOffset = audio_sound_get_track_position(obj_game.current_music);
 			audio_stop_sound(obj_game.current_music);
 			obj_game.current_music = audio_play_sound(snd_game_music, 0, 1, 1, audioOffset);
 		}
+	} else if tutorial {
+		layer_sequence_destroy(obj_tutorial.ghost_seq_to);
+		obj_tutorial.alarm[1] = room_speed;
+		obj_tutorial.ghost_seq_from = layer_sequence_create("HUDSequences", 0, 0, seq_from_ghost);
 	}
 }
 

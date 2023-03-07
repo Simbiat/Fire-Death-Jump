@@ -122,7 +122,6 @@
     {"id":{"name":"spr_civilian_transition_2","path":"sprites/spr_civilian_transition_2/spr_civilian_transition_2.yy",},},
     {"id":{"name":"spr_civilian_scared_1","path":"sprites/spr_civilian_scared_1/spr_civilian_scared_1.yy",},},
     {"id":{"name":"bg_start_script_tut","path":"scripts/bg_start_script_tut/bg_start_script_tut.yy",},},
-    {"id":{"name":"spr_button_next","path":"sprites/spr_button_next/spr_button_next.yy",},},
     {"id":{"name":"obj_button_play","path":"objects/obj_button_play/obj_button_play.yy",},},
     {"id":{"name":"spr_player_1_fall","path":"sprites/spr_player_1_fall/spr_player_1_fall.yy",},},
     {"id":{"name":"spr_logo","path":"sprites/spr_logo/spr_logo.yy",},},

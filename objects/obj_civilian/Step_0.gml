@@ -1,3 +1,9 @@
+if (instance_exists(obj_player) && obj_player.ghost) || (instance_exists(obj_player_tut) && obj_player_tut.ghost) {
+	image_speed = 0.25;
+} else {
+	image_speed = 1;
+}
+
 // Destroy if below room (350-pixel margin)
 if (y > room_height + 350 || y < - 350)
 {

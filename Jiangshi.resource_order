@@ -92,7 +92,6 @@
     {"name":"spr_civilian_transition_2","order":2,"path":"sprites/spr_civilian_transition_2/spr_civilian_transition_2.yy",},
     {"name":"spr_civilian_scared_1","order":1,"path":"sprites/spr_civilian_scared_1/spr_civilian_scared_1.yy",},
     {"name":"bg_start_script_tut","order":1,"path":"scripts/bg_start_script_tut/bg_start_script_tut.yy",},
-    {"name":"spr_button_next","order":16,"path":"sprites/spr_button_next/spr_button_next.yy",},
     {"name":"obj_button_play","order":2,"path":"objects/obj_button_play/obj_button_play.yy",},
     {"name":"spr_player_1_fall","order":5,"path":"sprites/spr_player_1_fall/spr_player_1_fall.yy",},
     {"name":"snd_tutorial","order":3,"path":"sounds/snd_tutorial/snd_tutorial.yy",},

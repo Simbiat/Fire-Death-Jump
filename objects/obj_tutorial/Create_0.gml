@@ -12,9 +12,6 @@ death_seqs = [noone, noone, noone, noone, noone];
 with (civilian_window_1) {
 	createCivilian();
 }
-with (civilian_window_2) {
-	createCivilian();
-}
 with (fire_window_1) {
 	createFire();
 }
