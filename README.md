@@ -5,7 +5,7 @@ Playable web version [here](https://www.simbiat.dev/games/jiangshi/)
 ## Deathless Dash:
 - Game design and coding: [Dmitry Kustov](https://www.linkedin.com/in/simbiat19/)
 - New graphical assets: [Nguyen Tien](https://www.linkedin.com/in/tnguyenanm/)
-- New sound assets: Jade Allen
+- New sound assets: [Jade Allen](https://www.linkedin.com/in/jade-allen-149215269/)
 ## Changes already done:
 1. Removed start screen
 2. Navigate menus using `up` and `down` keys (select with `space` or `enter` keys)
