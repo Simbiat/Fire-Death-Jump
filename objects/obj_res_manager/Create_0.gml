@@ -1,6 +1,6 @@
 // Set game width, height and scale
 var width = 1080, height = 1920;
-global.screen_scale = min(1, display_get_height() / height)
+global.screen_scale = min(1, display_get_height() / height, display_get_width() / width)
 
 // Set window size and surface resolution
 window_set_size(width*global.screen_scale, height*global.screen_scale);

@@ -12,10 +12,10 @@ if ghost {
 	}
 } else {
 	if moving {
-	toGhost();
-	//Set temporary invulnerability to prevent instant death
-	invulnerable = true;
-	//Set it for 2 seconds
-	alarm[1] = 2*room_speed;
+		toGhost();
+		//Set temporary invulnerability to prevent instant death
+		invulnerable = true;
+		//Set it for 2 seconds
+		alarm[1] = 2*room_speed;
 	}
 }

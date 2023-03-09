@@ -1,4 +1,4 @@
-if (instance_exists(obj_player) && obj_player.ghost) || (instance_exists(obj_player_tut) && obj_player_tut.ghost) {
+if (instance_exists(obj_player) && obj_player.ghost) {
 	image_speed = 0.25;
 } else {
 	image_speed = 1;

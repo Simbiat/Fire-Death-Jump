@@ -5,8 +5,6 @@ if (other.image_alpha < 1)
 {
 	exit;
 }
-
-// Let the fire defeat the player
-// Create defeated instance
-// and remove current instance
-toGhost();
+if !ghost {
+	toGhost(tutorial);
+}

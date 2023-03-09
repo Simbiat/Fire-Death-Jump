@@ -19,19 +19,6 @@ if (mouse_check_button_pressed(mb_left))
 delta_mouse_x = new_mouse_x - prev_mouse_x;
 delta_mouse_y = new_mouse_y - prev_mouse_y;
 
-// If LMB is released
-if (mouse_check_button_released(mb_left))
-{
-	// If the mouse was only moved under 10 pixels while held
-	if (held_movement < 10)
-	{
-		// Run the player's Key Press - Space event so it jumps
-		with (obj_player) {
-			event_perform(ev_keypress, vk_space);
-		}
-	}
-}
-
 // If the mouse is being held
 if (mouse_check_button(mb_left))
 {

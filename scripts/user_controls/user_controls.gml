@@ -5,6 +5,10 @@ function isHoldingDown()
 		if obj_game.ghost_seq_to != noone && !layer_sequence_is_finished(obj_game.ghost_seq_to) {
 			return true;
 		}
+		//Do not hold if player is moving one's finger acros the screen
+		if instance_exists(obj_player) && obj_player.touch_input_x >= abs(10) {
+			return false;
+		}
 		if keyboard_check(vk_down) || mouse_check_button(mb_left) || keyboard_check(vk_numpad2) ||  keyboard_check(ord("S")) {
 			return true;
 		} else {
@@ -141,8 +145,8 @@ function buttonUse()
 function buttonEscape()
 {
 	if keyboard_check_pressed(vk_escape) {
-		if instance_exists(obj_player) {
-			permaDeath(true);
+		if room == rm_game && instance_exists(obj_player) {
+			permaDeath();
 		} else if room == rm_tutorial {
 			room_goto(rm_menu);
 		} else if instance_exists(obj_button_menu) {

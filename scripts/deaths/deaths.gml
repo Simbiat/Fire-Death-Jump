@@ -1,4 +1,4 @@
-function permaDeath(manual = false)
+function permaDeath(timer = false)
 {
 	//Does not make sense to trigger if there is no player (for example during intro)
 	if instance_exists(obj_player) && obj_player.x != 0 && obj_player.y != 0 {
@@ -24,12 +24,12 @@ function permaDeath(manual = false)
 		instance_destroy(earth_fire_2);
 		instance_destroy(earth_fire_3);
 		instance_destroy(earth_fire_4);
-		if !manual {
-			audio_play_sound(snd_rooster, 0, 0);
-			screenshake(3, 10, 0.5);
+		if timer {
+			audio_play_sound(snd_rooster, 0, 0, 0.5);
 		} else {
 			audio_play_sound(snd_player_defeat_fire, 0, 0);
 		}
+		screenshake(3, 10, 0.5);
 	}
 }
 
@@ -98,7 +98,7 @@ function fromGhost(tutorial = false)
 	if instance_exists(obj_corn_seed) {
 		instance_destroy(obj_corn_seed);
 	}
-	if instance_exists(obj_player) {
+	if !tutorial && instance_exists(obj_player) {
 		if obj_game.ghost_seq_to != noone {
 			layer_sequence_destroy(obj_game.ghost_seq_to);
 			obj_game.ghost_seq_to = noone;
@@ -120,7 +120,7 @@ function civilianDeath()
 {
 	// If civilian is not killed yet
 	if (killed == false && eaten == false) {
-		if other.ghost {
+		if other.ghost && !other.tutorial {
 			if other.vspeed == 0 {
 				if hp > 0 {
 					//Add a little bit of blood if we are not holding down

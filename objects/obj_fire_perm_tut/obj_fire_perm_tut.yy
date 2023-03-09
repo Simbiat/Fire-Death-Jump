@@ -2,16 +2,19 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_fire_perm_tut",
-  "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
-  ],
+  "eventList": [],
   "managed": true,
-  "overriddenProperties": [],
+  "overriddenProperties": [
+    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_fire_permanent","path":"objects/obj_fire_permanent/obj_fire_permanent.yy",},"propertyId":{"name":"tutorial","path":"objects/obj_fire_permanent/obj_fire_permanent.yy",},"value":"True",},
+  ],
   "parent": {
     "name": "Tutorial",
     "path": "folders/Objects/Tutorial.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_fire_permanent",
+    "path": "objects/obj_fire_permanent/obj_fire_permanent.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -25,10 +28,7 @@
   "physicsShape": 1,
   "physicsShapePoints": [],
   "physicsStartAwake": true,
-  "properties": [
-    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"image_xscale","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"1.3","varType":0,},
-    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"image_yscale","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"1.3","varType":0,},
-  ],
+  "properties": [],
   "solid": false,
   "spriteId": {
     "name": "spr_fire_alt",

@@ -52,7 +52,7 @@ function fillingWindow()
 	chance = 3;
 	if !secondary {
 		if instance_exists(obj_player) && obj_player.ghost {
-			if random_range(0, 100) <= 40 + obj_player.deaths*5 + 50/global.ghost_timer {
+			if random_range(0, 100) <= min(40 + obj_player.deaths*5 + 50/global.ghost_timer, 90) {
 				chance = 0;
 			} else {
 				chance = irandom_range(1, 3);

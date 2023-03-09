@@ -1,1 +1,3 @@
-civilianDeath();
+if !other.tutorial {
+	civilianDeath();
+}

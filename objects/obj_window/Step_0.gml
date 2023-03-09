@@ -4,7 +4,7 @@ if (y > room_height + 360) {
 	// In this way we recycle windows instead of spawning new ones
 	
 	// Random x value in room, with 250 pixel margin
-	if !secondary {
+	if !secondary && !tutorial {
 		var new_x = irandom_range(250, room_width - 250);
 		// Go to that position
 		x = new_x;
@@ -12,7 +12,7 @@ if (y > room_height + 360) {
 		fillingWindow();
 		createSecondaryWindow();
 	} else {
-		//Destroy secondary windows
+		//Destroy secondary and tutorial windows
 		instance_destroy();
 	}
 }

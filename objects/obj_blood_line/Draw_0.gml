@@ -14,7 +14,7 @@ draw_set_valign(fa_middle);
 // is a decimal value, but we
 // need to display an integer,
 // which is why we round it
-if (instance_exists(obj_player) && obj_player.ghost) || (instance_exists(obj_player_tut) && obj_player_tut.ghost) {
+if (instance_exists(obj_player) && obj_player.ghost) {
 	text_outline(x, y - 40, "100", make_colour_rgb(136, 8, 8));
 	text_outline(x, y - 90, string(round(global.ghost_satiety))+"/", make_colour_rgb(136, 8, 8));
 } else {

@@ -14,7 +14,7 @@ if darken {
 			break;
 		case 2:
 	        areaFocus(civilian_window_1.x - civilian_window_1.sprite_width/2, civilian_window_1.y - civilian_window_1.sprite_height*0.75, civilian_window_1.x + civilian_window_1.sprite_width/2, civilian_window_1.y + civilian_window_1.sprite_height*0.1);
-	        text_outline(center, vertical + 650, "Ha! Here's your first victim!\nBut you don't really feel hungry just yet...\nHm, might as well spill as much of blood as possible, since the smell of it is also quite pleasant.\nLet's jump onto that window! Since you are a jumping vampire you do not really need to do anything special for this. It's almost \"automatic\" for you.", c_white, c_black);
+	        text_outline(center, vertical + 700, "Ha! Here's your first victim!\nBut you don't really feel hungry just yet...\nHm, might as well spill as much of blood as possible, since the smell of it is also quite pleasant.\nLet's jump onto that window! Since you are a jumping vampire you do not really need to do anything special for this. It's almost \"automatic\" for you. You only need to lean a bit to the left or to the right to adjust your trajectory.", c_white, c_black);
 			break;
 		case 3:
 	        areaFocus(civilian_window_1.x - civilian_window_1.sprite_width/2, civilian_window_1.y - civilian_window_1.sprite_height*0.75, civilian_window_1.x + civilian_window_1.sprite_width/2, civilian_window_1.y + civilian_window_1.sprite_height*0.1);
