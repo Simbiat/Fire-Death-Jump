@@ -157,7 +157,6 @@
     {"id":{"name":"seq_death_4","path":"sequences/seq_death_4/seq_death_4.yy",},},
     {"id":{"name":"obj_window","path":"objects/obj_window/obj_window.yy",},},
     {"id":{"name":"obj_timer","path":"objects/obj_timer/obj_timer.yy",},},
-    {"id":{"name":"spr_foam_particle","path":"sprites/spr_foam_particle/spr_foam_particle.yy",},},
     {"id":{"name":"snd_player_jump_1","path":"sounds/snd_player_jump_1/snd_player_jump_1.yy",},},
     {"id":{"name":"windows","path":"scripts/windows/windows.yy",},},
     {"id":{"name":"spr_civilian_0","path":"sprites/spr_civilian_0/spr_civilian_0.yy",},},
