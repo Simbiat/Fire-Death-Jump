@@ -1,4 +1,4 @@
-function permaDeath(timer = false)
+function permaDeath(_timer = false)
 {
 	//Does not make sense to trigger if there is no player (for example during intro)
 	if instance_exists(obj_player) && obj_player.x != 0 && obj_player.y != 0 {
@@ -9,10 +9,12 @@ function permaDeath(timer = false)
 				fromGhost();
 			}
 			//Destroy skull icons
-			for (var i = 0; i < 5; ++i) {
-				if obj_game.death_seqs[i] != noone {
-					layer_sequence_destroy(obj_game.death_seqs[i]);
-					obj_game.death_seqs[i] = noone;
+			if (array_length(obj_game.death_seqs) > 0) {
+				for (var _i = 0; _i < array_length(obj_game.death_seqs); ++_i) {
+					if obj_game.death_seqs[_i] != noone {
+						layer_sequence_destroy(obj_game.death_seqs[_i]);
+						obj_game.death_seqs[_i] = noone;
+					}
 				}
 			}
 		}
@@ -24,7 +26,7 @@ function permaDeath(timer = false)
 		instance_destroy(earth_fire_2);
 		instance_destroy(earth_fire_3);
 		instance_destroy(earth_fire_4);
-		if timer {
+		if _timer {
 			audio_play_sound(snd_rooster, 0, 0, 0.5);
 		} else {
 			audio_play_sound(snd_player_defeat_fire, 0, 0);
